@@ -1,11 +1,11 @@
 # MicroService-SpringCloud
 ## Instructions 
-### 1-Install Vault : https://developer.hashicorp.com/vault/docs/install
-### 2-Install Consul : https://developer.hashicorp.com/consul/docs/install
-### 3-Run Vault :  vault server -dev
-### 4-Run Consul :  consul agent -server -bootstrap-expect=1 -data-dir=consul-data -ui -bind="Your API"
-### 5-Run each service starting from config service
-### 6- Run the Angular Application  ecom-web-app : ng-serve
+#### 1-Install Vault : https://developer.hashicorp.com/vault/docs/install
+####  2-Install Consul : https://developer.hashicorp.com/consul/docs/install
+####  3-Run Vault :  vault server -dev
+####  4-Run Consul :  consul agent -server -bootstrap-expect=1 -data-dir=consul-data -ui -bind="Your API"
+####  5-Run each service starting from config service
+####  6- Run the Angular Application  ecom-web-app : ng-serve
 ## API 
 ### Conventions 
 #### --> /customers : list all customers.
