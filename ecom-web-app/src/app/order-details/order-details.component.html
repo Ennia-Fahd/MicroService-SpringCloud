@@ -1,0 +1,72 @@
+<div class="container mt-2" *ngIf="orderdetails">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <!--Id header-->
+        <div class="card-header">
+          Order ID : {{orderId}}
+        </div>
+
+        <!--Detail Orders-->
+        <div class="card-body text-secondary">
+          <ul class="list-group">
+            <!--Order Id-->
+            <li class="list-group-item">
+              Order id : {{orderdetails.id}}
+            </li>
+            <!--Date Order-->
+            <li class="list-group-item">
+              Date : {{orderdetails.createdAt|date:'dd/MM/YYYY'}}
+            </li>
+            <!--Statut Order-->
+            <li class="list-group-item">
+              Status : {{orderdetails.status}}
+            </li>
+            <!--Customers Detail-->
+            <!--Id Customer-->
+            <li class="list-group-item">
+              Customer id : {{orderdetails.customer.id}}
+            </li>
+            <!--Name Customer-->
+            <li class="list-group-item">
+              Customer Name : {{orderdetails.customer.name}}
+            </li>
+            <!--Email Customer-->
+            <li class="list-group-item">
+              Customer Email : {{orderdetails.customer.email}}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">Products Items</div>
+        <div class="card-body">
+          <table class="table table-sm">
+            <thead>
+              <tr class="bg-dark text-white">
+                <th>Product Id</th><th>Product Name</th><th>Quantity</th><th>Price</th><th>Discount</th><th>Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let order of orderdetails.productItems">
+                <td>{{order.product.id}}</td>
+                <td>{{order.product.name}}</td>
+                <td>{{order.quantity}}</td>
+                <td class="">{{order.price |number:'.2'}}</td>
+                <td>{{order.discount|number:'.2'}}</td>
+                <td>{{order.amount|number:'.2'}}</td>
+              </tr>
+            <tr class="bg-dark text-white">
+              <td colspan="5" class="text-end">Total</td>
+              <td class="text-end">{{orderdetails.total|number:'.2'}}</td>
+            </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
